@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import heroVideo from "@/assets/hero-video.mp4";
-import ginetasLogo from "@/assets/ginetas-logo.png";
 import jonavaLogo from "@/assets/jonava-logo.png";
 
 const HeroSection = () => {
@@ -42,11 +41,6 @@ const HeroSection = () => {
               Išmanusis miestas
             </span>
           </div>
-          <div className="h-8 w-px bg-border" />
-          <a href="https://ginetas.lt" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 rounded-lg border border-border/50 bg-secondary/60 px-3 py-1.5 backdrop-blur-sm transition-all hover:border-primary/50">
-            <img src={ginetasLogo} alt="Ginetas" className="h-5 w-5 object-contain" />
-            <span className="text-xs text-muted-foreground font-medium">ginetas.lt</span>
-          </a>
         </motion.div>
 
         {/* Heading */}

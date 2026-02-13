@@ -110,18 +110,18 @@ const ProjectsSection = () => {
         className="mt-24 text-center"
       >
         <div className="mx-auto w-24 line-glow mb-8" />
+        <p className="text-sm text-muted-foreground">
+          © 2024 Jonava · Išmanaus miesto projektai
+        </p>
         <a
           href="https://ginetas.lt"
           target="_blank"
           rel="noopener noreferrer"
-          className="mb-4 inline-flex items-center gap-3 rounded-lg border border-border/50 bg-secondary/40 px-5 py-2.5 backdrop-blur-sm transition-all hover:border-primary/50 hover:bg-secondary/60"
+          className="mt-3 inline-flex items-center gap-2 text-xs text-muted-foreground/60 transition-colors hover:text-primary"
         >
-          <img src={ginetasLogo} alt="Ginetas" className="h-6 w-6 object-contain" />
-          <span className="text-sm font-medium text-muted-foreground">ginetas.lt</span>
+          <img src={ginetasLogo} alt="Ginetas" className="h-4 w-4 object-contain opacity-50 transition-opacity group-hover:opacity-100" />
+          Sukūrė ginetas.lt
         </a>
-        <p className="text-sm text-muted-foreground">
-          © 2024 Jonava · Išmanaus miesto projektai
-        </p>
       </motion.div>
     </section>
   );
