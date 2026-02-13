@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import heroVideo from "@/assets/hero-video.mp4";
 import ginetasLogo from "@/assets/ginetas-logo.png";
+import jonavaLogo from "@/assets/jonava-logo.png";
 
 const HeroSection = () => {
   return (
@@ -29,8 +30,22 @@ const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="mb-8 flex items-center gap-4"
         >
-          <a href="https://ginetas.lt" target="_blank" rel="noopener noreferrer" className="flex h-14 w-14 items-center justify-center rounded-xl border border-border bg-secondary/80 backdrop-blur-sm transition-colors hover:border-primary/50">
-            <img src={ginetasLogo} alt="Ginetas" className="h-9 w-9 object-contain" />
+          <div className="flex h-14 w-14 items-center justify-center rounded-xl border border-border bg-secondary/80 backdrop-blur-sm">
+            <img src={jonavaLogo} alt="Jonava" className="h-9 w-9 object-contain" />
+          </div>
+          <div className="h-8 w-px bg-border" />
+          <div className="flex flex-col items-start">
+            <span className="font-display text-sm font-semibold tracking-wider text-foreground uppercase">
+              Jonava
+            </span>
+            <span className="text-xs text-muted-foreground tracking-wide">
+              Išmanusis miestas
+            </span>
+          </div>
+          <div className="h-8 w-px bg-border" />
+          <a href="https://ginetas.lt" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 rounded-lg border border-border/50 bg-secondary/60 px-3 py-1.5 backdrop-blur-sm transition-all hover:border-primary/50">
+            <img src={ginetasLogo} alt="Ginetas" className="h-5 w-5 object-contain" />
+            <span className="text-xs text-muted-foreground font-medium">ginetas.lt</span>
           </a>
           <div className="h-8 w-px bg-border" />
           <div className="flex flex-col items-start">
