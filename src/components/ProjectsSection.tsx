@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import ProjectCard from "./ProjectCard";
+import ginetasLogo from "@/assets/ginetas-logo.png";
 
 import bridgeImg from "@/assets/project-bridge.jpg";
 import floodImg from "@/assets/project-flood.jpg";
@@ -109,6 +110,15 @@ const ProjectsSection = () => {
         className="mt-24 text-center"
       >
         <div className="mx-auto w-24 line-glow mb-8" />
+        <a
+          href="https://ginetas.lt"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mb-4 inline-flex items-center gap-3 rounded-lg border border-border/50 bg-secondary/40 px-5 py-2.5 backdrop-blur-sm transition-all hover:border-primary/50 hover:bg-secondary/60"
+        >
+          <img src={ginetasLogo} alt="Ginetas" className="h-6 w-6 object-contain" />
+          <span className="text-sm font-medium text-muted-foreground">ginetas.lt</span>
+        </a>
         <p className="text-sm text-muted-foreground">
           © 2024 Jonava · Išmanaus miesto projektai
         </p>
