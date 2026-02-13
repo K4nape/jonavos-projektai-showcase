@@ -47,15 +47,6 @@ const HeroSection = () => {
             <img src={ginetasLogo} alt="Ginetas" className="h-5 w-5 object-contain" />
             <span className="text-xs text-muted-foreground font-medium">ginetas.lt</span>
           </a>
-          <div className="h-8 w-px bg-border" />
-          <div className="flex flex-col items-start">
-            <span className="font-display text-sm font-semibold tracking-wider text-foreground uppercase">
-              Jonava
-            </span>
-            <span className="text-xs text-muted-foreground tracking-wide">
-              Išmanusis miestas
-            </span>
-          </div>
         </motion.div>
 
         {/* Heading */}
