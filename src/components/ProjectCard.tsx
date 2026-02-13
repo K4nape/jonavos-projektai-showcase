@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { CheckCircle2, Wrench, CalendarClock, ExternalLink } from "lucide-react";
+import { CheckCircle2, Wrench, CalendarClock, ArrowUpRight } from "lucide-react";
 
 interface ProjectCardProps {
   title: string;
@@ -30,6 +30,11 @@ const ProjectCard = ({
 }: ProjectCardProps) => {
   const isEven = index % 2 === 0;
 
+  const Wrapper = link ? "a" : "div";
+  const wrapperProps = link
+    ? { href: link, target: "_blank", rel: "noopener noreferrer" }
+    : {};
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 60 }}
@@ -38,10 +43,11 @@ const ProjectCard = ({
       transition={{ duration: 0.7, delay: index * 0.1 }}
       className="group"
     >
-      <div
+      <Wrapper
+        {...wrapperProps}
         className={`flex flex-col gap-8 overflow-hidden rounded-2xl border border-border gradient-card transition-all duration-500 hover:border-primary/30 card-glow hover:card-glow-hover md:flex-row ${
-          !isEven ? "md:flex-row-reverse" : ""
-        }`}
+          link ? "cursor-pointer" : ""
+        } ${!isEven ? "md:flex-row-reverse" : ""}`}
       >
         {/* Image */}
         <div className="relative w-full overflow-hidden md:w-1/2">
@@ -54,6 +60,14 @@ const ProjectCard = ({
             />
           </div>
           <div className="absolute inset-0 bg-gradient-to-t from-card/80 via-transparent to-transparent" />
+          {/* Hover overlay with arrow */}
+          {link && (
+            <div className="absolute inset-0 flex items-center justify-center bg-background/40 opacity-0 backdrop-blur-sm transition-opacity duration-500 group-hover:opacity-100">
+              <div className="flex h-14 w-14 items-center justify-center rounded-full border border-primary/30 bg-primary/10 text-primary shadow-lg shadow-primary/20">
+                <ArrowUpRight size={24} />
+              </div>
+            </div>
+          )}
           <div className="absolute bottom-4 left-4">
             {(() => {
               const cfg = statusConfig[status];
@@ -92,21 +106,9 @@ const ProjectCard = ({
             </div>
           )}
 
-          {link && (
-            <a
-              href={link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-6 inline-flex w-fit items-center gap-2 rounded-lg border border-primary/20 bg-primary/5 px-4 py-2 text-sm font-medium text-primary transition-all hover:border-primary/40 hover:bg-primary/10"
-            >
-              Plačiau
-              <ExternalLink size={14} />
-            </a>
-          )}
-
           <div className="mt-6 line-glow" />
         </div>
-      </div>
+      </Wrapper>
     </motion.div>
   );
 };
