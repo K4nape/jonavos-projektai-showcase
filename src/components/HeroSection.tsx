@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import heroVideo from "@/assets/hero-video.mp4";
 import jonavaLogo from "@/assets/jonava-logo.png";
+import ginetasLogo from "@/assets/ginetas-logo.png";
 
 const HeroSection = () => {
   return (
@@ -106,6 +107,17 @@ const HeroSection = () => {
             <div className="h-1.5 w-1 rounded-full bg-primary" />
           </motion.div>
         </motion.div>
+
+        {/* Ginetas watermark */}
+        <a
+          href="https://ginetas.lt"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group absolute bottom-4 right-6 flex items-center gap-1.5 opacity-20 transition-opacity hover:opacity-50"
+        >
+          <img src={ginetasLogo} alt="Ginetas" className="h-3.5 w-3.5 object-contain" />
+          <span className="text-[10px] text-muted-foreground">ginetas.lt</span>
+        </a>
       </div>
     </section>
   );
