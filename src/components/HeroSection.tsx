@@ -113,10 +113,10 @@ const HeroSection = () => {
           href="https://ginetas.lt"
           target="_blank"
           rel="noopener noreferrer"
-          className="group absolute bottom-4 right-6 flex items-center gap-1.5 opacity-20 transition-opacity hover:opacity-50"
+          className="group absolute bottom-4 right-6 flex items-center gap-2 opacity-40 transition-opacity hover:opacity-70"
         >
-          <img src={ginetasLogo} alt="Ginetas" className="h-3.5 w-3.5 object-contain" />
-          <span className="text-[10px] text-muted-foreground">ginetas.lt</span>
+          <img src={ginetasLogo} alt="Ginetas" className="h-4 w-4 object-contain" />
+          <span className="text-xs text-muted-foreground">Powered by ginetas.lt</span>
         </a>
       </div>
     </section>
