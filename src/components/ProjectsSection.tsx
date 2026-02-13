@@ -16,6 +16,7 @@ const projects = [
     image: bridgeImg,
     status: "active" as const,
     statusLabel: "Veikia",
+    link: "https://jonava.lt",
     stats: [
       { label: "Energijos taupymas", value: "40%" },
       { label: "LED taškai", value: "320" },
@@ -28,6 +29,7 @@ const projects = [
     image: floodImg,
     status: "active" as const,
     statusLabel: "Veikia",
+    link: "https://jonava.lt",
     stats: [
       { label: "Jutikliai", value: "12" },
       { label: "Perspėjimai", value: "< 5 min" },

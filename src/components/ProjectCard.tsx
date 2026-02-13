@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { CheckCircle2, Wrench, CalendarClock, ExternalLink } from "lucide-react";
 
 interface ProjectCardProps {
   title: string;
@@ -8,12 +9,13 @@ interface ProjectCardProps {
   statusLabel: string;
   index: number;
   stats?: { label: string; value: string }[];
+  link?: string;
 }
 
-const statusClasses: Record<string, string> = {
-  active: "badge-status-active",
-  progress: "badge-status-progress",
-  planned: "badge-status",
+const statusConfig: Record<string, { className: string; icon: typeof CheckCircle2 }> = {
+  active: { className: "badge-status-active", icon: CheckCircle2 },
+  progress: { className: "badge-status-progress", icon: Wrench },
+  planned: { className: "badge-status", icon: CalendarClock },
 };
 
 const ProjectCard = ({
@@ -24,6 +26,7 @@ const ProjectCard = ({
   statusLabel,
   index,
   stats,
+  link,
 }: ProjectCardProps) => {
   const isEven = index % 2 === 0;
 
@@ -52,10 +55,16 @@ const ProjectCard = ({
           </div>
           <div className="absolute inset-0 bg-gradient-to-t from-card/80 via-transparent to-transparent" />
           <div className="absolute bottom-4 left-4">
-            <span className={statusClasses[status]}>
-              <span className="h-1.5 w-1.5 rounded-full bg-current animate-pulse-glow" />
-              {statusLabel}
-            </span>
+            {(() => {
+              const cfg = statusConfig[status];
+              const Icon = cfg.icon;
+              return (
+                <span className={cfg.className}>
+                  <Icon size={12} />
+                  {statusLabel}
+                </span>
+              );
+            })()}
           </div>
         </div>
 
@@ -81,6 +90,18 @@ const ProjectCard = ({
                 </div>
               ))}
             </div>
+          )}
+
+          {link && (
+            <a
+              href={link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-6 inline-flex w-fit items-center gap-2 rounded-lg border border-primary/20 bg-primary/5 px-4 py-2 text-sm font-medium text-primary transition-all hover:border-primary/40 hover:bg-primary/10"
+            >
+              Plačiau
+              <ExternalLink size={14} />
+            </a>
           )}
 
           <div className="mt-6 line-glow" />
